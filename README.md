@@ -1,1 +1,1 @@
-# GitTraining
+# TripleX
