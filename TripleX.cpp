@@ -40,6 +40,5 @@ int main()
         std::cout << "Wrong channel, keep surfing!" << std::endl;
     }
     
-
     return 0;
 }
