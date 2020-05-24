@@ -8,9 +8,9 @@ int main()
     std::cout << "You need to find the correct channel to continue..." << std::endl;
 
     // Declare 3 number code
-    const int CodeA = 4;
-    const int CodeB = 8;
-    const int CodeC = 18;
+    const int CodeA = 1;
+    const int CodeB = 2;
+    const int CodeC = 3;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
@@ -28,6 +28,18 @@ int main()
 
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct= GuessA * GuessB * GuessC;
+
+    if (GuessSum == CodeSum && GuessProduct == CodeProduct)
+    {
+        std::cout << std::endl;
+        std::cout << "You found the message! It says... 'Stop watching TV and do the dishes' :(" << std::endl;
+    }
+    else
+    {
+        std::cout << std::endl;
+        std::cout << "Wrong channel, keep surfing!" << std::endl;
+    }
+    
 
     return 0;
 }
