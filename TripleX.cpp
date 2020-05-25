@@ -1,11 +1,22 @@
 #include <iostream>
 
-int main() 
-{ 
+void PrintIntroduction()
+{
     // Intro Story and Player Goal
-    std::cout << "Your wife working at the cable company is trying to send you a message through your TV";
-    std::cout << std::endl;
-    std::cout << "You need to find the correct channel to continue..." << std::endl;
+    std::cout << "Your wife stuck at work is trying to send you a message through your TV\n";
+    std::cout << "You need to find the correct channel to continue...\n";
+
+    std::cout << " ___________\n";
+    std::cout << "|  .----.  o|\n";
+    std::cout << "| |      | o|\n";
+    std::cout << "| |      | o|\n";
+    std::cout << "|__`----`___|\n";
+    std::cout << " `         `\n\n";
+}
+
+void PlayGame()
+{
+    PrintIntroduction();
 
     // Declare 3 number code
     const int CodeA = 1;
@@ -16,29 +27,31 @@ int main()
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     // Print CodeSum and CodeProduct to the terminal
-    std::cout << std::endl;
-    std::cout << "There are 3 numbers in the channel" << std::endl;
-    std::cout << "The numbers add up to: " << CodeSum << std::endl;
-    std::cout << "The numbers multiply to give: " << CodeProduct << std::endl;
+    std::cout << "There are 3 numbers in the channel";
+    std::cout << "\nThe numbers add up to: " << CodeSum;
+    std::cout << "\nThe numbers multiply to give: " << CodeProduct << std::endl;
 
+    // Store player guess
+    std::cout << std::endl;
     int GuessA, GuessB, GuessC;
-    std::cin >> GuessA;
-    std::cin >> GuessB;
-    std::cin >> GuessC;
+    std::cin >> GuessA >> GuessB >> GuessC;
 
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct= GuessA * GuessB * GuessC;
 
+    // Check if the player's guess is correct
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << std::endl;
-        std::cout << "You found the message! It says... 'Stop watching TV and do the dishes' :(" << std::endl;
+        std::cout << "\nYou found the message! It says... \"Stop watching TV and do the dishes\" :(\n";
     }
     else
     {
-        std::cout << std::endl;
-        std::cout << "Wrong channel, keep surfing!" << std::endl;
+        std::cout << "\nWrong channel, keep surfing!\n";
     }
-    
+}
+
+int main() 
+{ 
+    PlayGame();
     return 0;
 }
